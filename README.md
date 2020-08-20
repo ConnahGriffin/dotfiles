@@ -1,2 +1,2 @@
 # dotfiles
-Here are my gitfile
+Here are my Dotfiles 
