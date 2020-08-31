@@ -230,9 +230,10 @@ bindsym $mod+Shift+\ mode "$layout_restore"
 #The colour files are yet to be properly integrated, I can't seem to make them work yet
 
 #Layout save/restore
-set $layout_restore Layout Restore: (B)attleNet
+set $layout_restore Layout Restore: (B)attleNet, (S)team
 mode "$layout_restore" {
 	bindsym b	exec --nostartup-id "i3-msg 'workspace3;  append_layout ~/.config/i3/layout/battlenet.json'"
+	bindsym s       exec --nostartup-id "i3-msg 'workspace3;  append_layout ~/.config/i3/layout/steam.json'"
 	bindsym Escape	mode "default"
 }
 #Window specific setup Workspace Allocation/borders etc
