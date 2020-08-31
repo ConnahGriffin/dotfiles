@@ -223,7 +223,7 @@ bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~
 bindsym --release $mod+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
 bindsym XF86MonBrightnessUp exec light -A 5 	# Increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5 	# decrease screen brightness
-
+bindsym --release $mod+l exec ~/.config/i3/scripts/i3lock-fancy
 #Colors
 #The colour files are yet to be properly integrated, I can't seem to make them work yet
 
