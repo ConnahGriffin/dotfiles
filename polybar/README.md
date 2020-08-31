@@ -1,10 +1,10 @@
-## Polybar
+# Polybar
 
 Taken from [Polybar-5](https://github.com/adi1090x/polybar-themes#-polybar-5)
 
 This one is made more specific for i3, as the original was oriented around openbox.
 
-# Changes made and some tips if you face problems as a new user
+## Changes made and some tips if you face problems as a new user
 mpd module switched out for an user made module called [Polybar-spotify](https://github.com/Jvanrhijn/polybar-spotify).Due to the auto hide features of polybar modules, it will appear only if you have it on.
 Made the pacman implementation in the custom package update script to apt
 
