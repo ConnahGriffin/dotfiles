@@ -1,0 +1,7 @@
+configuration {
+	modi: "window,run,drun,combi";
+	font: "mono 12";
+	show-icons: true;
+	combi-modi: "window,run,drun";
+}
+@import "/usr/share/rofi/themes/sidebar.rasi"
