@@ -108,9 +108,6 @@ set relativenumber
 
 " * Text Formatting -- General
 
-" don't make it look like there are line breaks where there aren't:
-set nowrap
-
 " use indents of 2 spaces, and have them copied down lines:
 set shiftwidth=2
 set shiftround
