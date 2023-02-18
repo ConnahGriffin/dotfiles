@@ -12,7 +12,8 @@ set splitright
 set splitbelow
 set smartindent
 set colorcolumn=80
-set tabstop=4 softtabstop=4
+set tabstop=4
+set softtabstop=4
 set shiftwidth=4 
 set expandtab 
 set shiftround
@@ -45,10 +46,10 @@ noremap <Leader>ca <Esc>:CocAction<CR>
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ CheckBackSpace() ? "\<TAB>" :
       \ coc#refresh()
 
-function! s:check_back_space() abort
+function! CheckBackSpace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
@@ -75,7 +76,7 @@ endfunction
 
 " Comment this out if you're not in a virtual environment like conda or
 " miniconda
-let g:python3_host_prog = expand('~/anaconda3/bin/python3')
+" let g:python3_host_prog = expand('~/anaconda3/bin/python3')
 
 " Find symbol of current document.
 nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
@@ -234,14 +235,10 @@ require'nvim-tree'.setup {
   hijack_netrw        = true,
   open_on_setup       = false,
   ignore_ft_on_setup  = {},
-  auto_close          = false,
   open_on_tab         = false,
   hijack_cursor       = false,
   update_cwd          = false,
-  update_to_buf_dir   = {
-    enable = true,
-    auto_open = true,
-  },
+  hijack_directories,
   diagnostics = {
     enable = false,
     icons = {
@@ -266,13 +263,16 @@ require'nvim-tree'.setup {
   },
   view = {
     width = 30,
-    height = 30,
     hide_root_folder = false,
     side = 'left',
-    auto_resize = false,
     mappings = {
       custom_only = false,
       list = {}
+    }
+  },
+  actions = {
+    open_file = {
+      resize_window = true
     }
   }
 }
