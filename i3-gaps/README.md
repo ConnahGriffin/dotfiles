@@ -3,4 +3,4 @@
 
 ## My thoughts
 - It should be noted that you may have to compile i3-gaps from their github account since there weren't any back when I used Ubuntu
-- Some of the shortcuts will need certain applications to run properly but should be easily available in one form or another
+- Some of the shortcuts will need certain packages to run properly but should be easily available in one form or another
