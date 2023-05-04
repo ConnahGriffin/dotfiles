@@ -233,8 +233,6 @@ lua << EOF
 require'nvim-tree'.setup {
   disable_netrw       = true,
   hijack_netrw        = true,
-  open_on_setup       = false,
-  ignore_ft_on_setup  = {},
   open_on_tab         = false,
   hijack_cursor       = false,
   update_cwd          = false,
@@ -284,7 +282,13 @@ END
 
 lua << EOF
 require("github-theme").setup({
-  theme_style = "dark",
-  function_style = "italic",
+  option = {
+    styles = {
+      functions = "italic",
+    },
+  },
 })
+vim.cmd('colorscheme github_dark')
 EOF
+
+
