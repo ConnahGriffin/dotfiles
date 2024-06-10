@@ -27,13 +27,13 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_recency
+bindsym $mod+d exec --no-startup-id dmenu_run
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -43,7 +43,7 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ################################################################################################
 
 exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+bindsym $mod+Ctrl+m exec kitty -e 'alsamixer'
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
 #bindsym $mod+Ctrl+m exec pavucontrol
@@ -55,7 +55,7 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
+bindsym $mod+Ctrl+b exec kitty -e 'bmenu'
 bindsym $mod+F2 exec palemoon
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
@@ -181,11 +181,13 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
+assign [class="Thunderbird"] 1
+assign [class="urxvt"] 1
+assign [class="URxvt"] 1
+assign [class="kitty"] 1
 assign [class="Firefox"] 2
 assign [class="firefox"] 2
+assign [class="Pcmanfm"] 3
 assign [class="hearthstone.exe"] 3
 assign [class="battle.net.exe"] 3
 assign [class="lutris"] 3
@@ -194,24 +196,33 @@ assign [class="Sublime_text"] 3
 assign [class="sublime_text"] 3
 assign [class="Spyder"] 3
 assign [class="stremio"] 3
+assign [class="Stremio"] 3
 assign [class="epicgameslauncher.exe"] 3
 assign [class="jetbrains-pycharm-ce"] 3
 assign [class="jetbrains-dataspell"] 3
+assign [class="jetbrains-studio"] 3
 assign [class="sun-awt-X11-XFramePeer"] 3
 assign [class="processing-app-Base"] 3
 assign [class="arduino ide"] 3
 assign [class="Arduino IDE"] 3
 assign [class="fritzing.real"] 3
 assign [class="Fritzing"] 3
-assign [class="VirtualBox Manager"] 3 
-assign [class="steam"] 3
-assign [class="Steam"] 3
-assign [title="steam"] 3
-assign [title="Steam"] 3
+assign [class="VirtualBox Manager"] 3
+assign [class="steam"] 4
+assign [class="Steam"] 4
+assign [title="steam"] 4
+assign [title="Steam"] 4
 assign [class="slack"] 4
 assign [class="Slack"] 4
+assign [class="heroic"] 4
 assign [class="ArenaTracker"] 4
+assign [class="gimp"] 4
+assign [class="Gimp"] 4
 assign [class="discord"] 5
+assign [class="Skype"] 5
+assign [class="vesktop"] 5
+assign [class="qbittorrent"] 7
+assign [class="qBittorrent"] 7
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -245,7 +256,9 @@ for_window [class="Himno.x86_60"] floating enable
 for_window [class="ArenaTracker"] floating enable border pixel 0
 for_window [class="battle.net.exe"] floating enable
 for_window [class="Steam" title="Friends List"] floating enable
-
+for_window [class="steam" title="Friends List"] floating enable
+for_window [class="hearthstone deck tracker.exe"] floating enable
+for_window [class="xdman-Main"] floating enable
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
