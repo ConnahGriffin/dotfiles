@@ -118,6 +118,7 @@ Plug 'vim-test/vim-test'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'fladson/vim-kitty'
 Plug 'posva/vim-vue'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -125,7 +126,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'voldikss/vim-floaterm'
 Plug 'folke/todo-comments.nvim', { 'branch': 'main' }
 Plug 'projekt0n/github-nvim-theme', { 'branch': 'main' }
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 call plug#end()
 
 let g:vim_json_syntax_conceal = 0
@@ -196,13 +198,14 @@ nmap <silent> t<C-g> :TestVisit<CR>
 
 lua <<EOF
 require 'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    disable = { "vue", "blade" }
-  },
-  indent = {
-    enable = true,
-  },
+    auto_install = true,
+    highlight = {
+        enable = true,
+        disable = { "vue", "blade" }
+    },
+    indent = {
+        enable = true,
+    },
 }
 EOF
 
@@ -236,7 +239,10 @@ require'nvim-tree'.setup {
   open_on_tab         = false,
   hijack_cursor       = false,
   update_cwd          = false,
-  hijack_directories,
+  hijack_directories  = {
+        enable = true,
+        auto_open = true,
+    },
   diagnostics = {
     enable = false,
     icons = {
@@ -261,17 +267,15 @@ require'nvim-tree'.setup {
   },
   view = {
     width = 30,
-    hide_root_folder = false,
     side = 'left',
-    mappings = {
-      custom_only = false,
-      list = {}
-    }
   },
   actions = {
     open_file = {
       resize_window = true
     }
+  },
+  renderer ={
+    root_folder_label = false
   }
 }
 EOF
@@ -290,5 +294,3 @@ require("github-theme").setup({
 })
 vim.cmd('colorscheme github_dark')
 EOF
-
-
