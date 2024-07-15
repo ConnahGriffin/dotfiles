@@ -210,6 +210,7 @@ assign [class="(?i)Gimp"] 4
 assign [class="discord"] 5
 assign [class="Skype"] 5
 assign [class="vesktop"] 5
+assign [class="(?i)protonvpn-app"] 6
 assign [class="(?i)qbittorrent"] 7
 
 # Open specific applications in floating mode
@@ -244,6 +245,7 @@ for_window [class="Himno.x86_60"] floating enable
 for_window [class="ArenaTracker"] floating enable border pixel 0
 for_window [class="battle.net.exe"] floating enable
 for_window [class="(?i)Steam" title="Friends List"] floating enable
+for_window [class="(?i)Firefox" title="Library"] floating enable
 for_window [class="java-lang-Thread" title="win0"] floating enable
 for_window [class="hearthstone deck tracker.exe"] floating enable
 for_window [class="xdman-Main"] floating enable
