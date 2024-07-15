@@ -127,6 +127,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'folke/todo-comments.nvim', { 'branch': 'main' }
 Plug 'projekt0n/github-nvim-theme', { 'branch': 'main' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'lambdalisue/suda.vim'
 
 call plug#end()
 
