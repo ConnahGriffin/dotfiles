@@ -186,7 +186,6 @@ assign [class="(?i)URxvt"] 1
 assign [class="kitty"] 1
 assign [class="(?i)Firefox"] 2
 assign [class="Pcmanfm"] 3
-assign [class="hearthstone.exe"] 3
 assign [class="battle.net.exe"] 3
 assign [class="(?i)Lutris"] 3
 assign [class="(?i)Sublime_text"] 3
@@ -202,11 +201,18 @@ assign [class="(?i)Arduino IDE"] 3
 assign [class="fritzing.real"] 3
 assign [class="Fritzing"] 3
 assign [class="VirtualBox Manager"] 3
+assign [class="hearthstone.exe"] 4
+
+# Both the one below this are for steam. Read the comment below on why there's two
 assign [class="(?i)Steam"] 4
+assign [class="SDL Application" instance="steamwebhelper"] 4
+
 assign [class="(?i)Slack"] 4
 assign [class="heroic"] 4
 assign [class="ArenaTracker"] 4
 assign [class="(?i)Gimp"] 4
+assign [class="(?i)fluent-reader"] 4
+assign [class="(?i)schildichat"] 4
 assign [class="discord"] 5
 assign [class="Skype"] 5
 assign [class="vesktop"] 5
@@ -244,8 +250,13 @@ for_window [class="Xfburn"] floating enable
 for_window [class="Himno.x86_60"] floating enable
 for_window [class="ArenaTracker"] floating enable border pixel 0
 for_window [class="battle.net.exe"] floating enable
+
+#The two below are both for steam, they changed their wm_class name and might revert so not removing old yet 
 for_window [class="(?i)Steam" title="Friends List"] floating enable
+for_window [class="SDL Application" instance="steamwebhelper" title="Friends List"] floating enable
+
 for_window [class="(?i)Firefox" title="Library"] floating enable
+for_window [class="(?i)Lutris" title="Add games to Lutris"] floating enable
 for_window [class="java-lang-Thread" title="win0"] floating enable
 for_window [class="hearthstone deck tracker.exe"] floating enable
 for_window [class="xdman-Main"] floating enable
