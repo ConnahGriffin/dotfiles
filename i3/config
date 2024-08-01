@@ -205,7 +205,7 @@ assign [class="hearthstone.exe"] 4
 
 # Both the one below this are for steam. Read the comment below on why there's two
 assign [class="(?i)Steam"] 4
-assign [class="SDL Application" instance="steamwebhelper"] 4
+assign [class="SDL Application" instance="steamwebhelper" title="Steam"] 4
 
 assign [class="(?i)Slack"] 4
 assign [class="heroic"] 4
