@@ -17,7 +17,7 @@ general {
 # order += "ipv6"
 order += "cpu_usage"
 order += "disk /"
-# order += "disk /home"
+order += "disk /home"
 order += "wireless _first_"
 order += "ethernet _first_"
 # order += "battery all"  # this is for laptops and such
@@ -36,7 +36,11 @@ load {
 
 disk "/" {
         # format = " hdd %avail "
-        format = " ⛁ %avail "
+        format = " ssd %avail "
+}
+
+disk "/home" {
+        format = " hdd %avail "
 }
 
 ethernet _first_ {
@@ -72,7 +76,7 @@ memory {
 
 tztime local {
         # format = "%Y-%m-%d %H:%M:%S"
-        format = " %d %b, %y %I:%M %r"
+        format = " %d %b, %y - %r"
         # Looks like 
         # 12 May, 90 10:55 PM
 }
