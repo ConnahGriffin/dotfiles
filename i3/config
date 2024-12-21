@@ -199,6 +199,7 @@ assign [class="sun-awt-X11-XFramePeer"] 3
 assign [class="processing-app-Base"] 3
 assign [class="(?i)Arduino IDE"] 3
 assign [class="fritzing.real"] 3
+assign [class="Godot"] 3
 assign [class="Fritzing"] 3
 assign [class="VirtualBox Manager"] 3
 assign [class="hearthstone.exe"] 4
@@ -206,6 +207,7 @@ assign [class="hearthstone.exe"] 4
 # Both the one below this are for steam. Read the comment below on why there's two
 assign [class="(?i)Steam"] 4
 assign [class="SDL Application" instance="steamwebhelper" title="Steam"] 4
+assign [class="SDL Application" instance="steamwebhelper" title="Friends List"] 4
 
 assign [class="(?i)Slack"] 4
 assign [class="heroic"] 4
@@ -223,6 +225,7 @@ assign [class="(?i)qbittorrent"] 7
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
+for_window [class="(?i)yad"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="fpakman"] floating enable
 for_window [class="Galculator"] floating enable border pixel 1
@@ -255,7 +258,7 @@ for_window [class="battle.net.exe"] floating enable
 for_window [class="(?i)Steam" title="Friends List"] floating enable
 for_window [class="SDL Application" instance="steamwebhelper" title="Friends List"] floating enable
 
-for_window [class="(?i)Firefox" title="Library"] floating enable
+for_window [class="(?i)Firefox" title="^Library$"] floating enable
 for_window [class="(?i)Lutris" title="Add games to Lutris"] floating enable
 for_window [class="java-lang-Thread" title="win0"] floating enable
 for_window [class="hearthstone deck tracker.exe"] floating enable
@@ -274,7 +277,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown, (Shift+r)eset resolution
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
@@ -283,7 +286,7 @@ mode "$mode_system" {
     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id i3exit reboot, mode "default"
     bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-
+    bindsym Shift+r exec "xrandr -s 1920x1080", mode "default"
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
     bindsym Escape mode "default"
