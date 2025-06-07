@@ -122,7 +122,7 @@ Plug 'fladson/vim-kitty'
 Plug 'posva/vim-vue'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 Plug 'voldikss/vim-floaterm'
 Plug 'folke/todo-comments.nvim', { 'branch': 'main' }
 Plug 'projekt0n/github-nvim-theme', { 'branch': 'main' }
@@ -171,7 +171,8 @@ map Q <Nop>
 autocmd FileType markdown let g:indentLine_enabled=0
 
 " Telescope
-nnoremap <C-p> <cmd>Telescope find_files theme=get_dropdown previewer=false winblend=10 layout_config.width=100<cr>
+nnoremap <C-p> :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ winblend = 10, previewer=false, layout_config.width=100 }))<cr>
+" nnoremap <C-p> <cmd>Telescope find_files theme=get_dropdown previewer=false winblend=10 layout_config.width=100<cr>
 nnoremap <leader>rg <cmd>Telescope live_grep<cr>
 nnoremap <A-k> :lua require('telescope.builtin').buffers({show_all_buffers = true})<cr>
 
@@ -255,16 +256,13 @@ require'nvim-tree'.setup {
   },
   update_focused_file = {
     enable      = false,
-    update_cwd  = false,
-    ignore_list = {}
+    update_cwd  = false
   },
   system_open = {
-    cmd  = nil,
-    args = {}
+    cmd  = nil
   },
   filters = {
-    dotfiles = false,
-    custom = {}
+    dotfiles = false
   },
   view = {
     width = 30,
