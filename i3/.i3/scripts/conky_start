@@ -1,0 +1,5 @@
+#!/bin/bash
+
+conky -c ~/Programmes/conky_configs/elliot_test &&
+
+exit 0
